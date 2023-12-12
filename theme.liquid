@@ -3,3 +3,10 @@
       {% else %}
       <link rel="canonical" href="{{ canonical_url }}" />
       {% endif %}
+
+
+{% if collection.url == '/collections/all-products' %}
+  <link rel="canonical" href="{{ canonical_url | split: "all-products?page=" | first }}" />
+  {%else %}
+  <link rel="canonical" href="{{ canonical_url | split: "?page=", | first }}" />
+  {% endif %}
